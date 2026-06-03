@@ -1,0 +1,275 @@
+{
+  "generated": true,
+  "skipReason": null,
+  "toolCount": 4,
+  "tools": [
+    {
+      "name": "book_reservation",
+      "description": "Customer can book a dining reservation by providing name, email, phone, date, time, number of guests, and special requests. Returns reservation confirmation with table number and confirmation code.",
+      "executable": true,
+      "method": "POST",
+      "endpoint": "/api/reservations",
+      "inputs": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"name\"."
+        },
+        "email": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"email\"."
+        },
+        "phone": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"phone\"."
+        },
+        "date": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"date\"."
+        },
+        "time": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"time\"."
+        },
+        "guests": {
+          "type": "number",
+          "required": true,
+          "description": "Observed in intercepted request body field \"guests\"."
+        },
+        "specialRequests": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"specialRequests\"."
+        }
+      },
+      "routing": [
+        {
+          "via": "http",
+          "target": "/api/reservations",
+          "method": "POST",
+          "operation": "book_reservation",
+          "executable": true,
+          "source": "runtime_binding"
+        },
+        {
+          "via": "openapi",
+          "target": "/api/reservations",
+          "method": "POST",
+          "operation": "book_reservation",
+          "executable": true,
+          "source": "openapi_operation"
+        },
+        {
+          "via": "mcp",
+          "target": "book_reservation",
+          "operation": "book_reservation",
+          "executable": true,
+          "source": "mcp_tool",
+          "reason": "Generated MCP tool proxies to the code-detected HTTP runtime binding."
+        },
+        {
+          "via": "a2a",
+          "target": "book_reservation",
+          "operation": "book_reservation",
+          "executable": true,
+          "source": "a2a_skill",
+          "reason": "A2A skill maps to the same reviewed action ID."
+        }
+      ]
+    },
+    {
+      "name": "place_order",
+      "description": "Customer can place a food order with items, quantities, pricing, customer details, order type (dine-in or delivery), and delivery address if applicable. Returns order confirmation with order ID, estimated time, and total.",
+      "executable": true,
+      "method": "POST",
+      "endpoint": "/api/order",
+      "inputs": {
+        "items[].itemId": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"items[].itemId\"."
+        },
+        "items[].name": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"items[].name\"."
+        },
+        "items[].quantity": {
+          "type": "number",
+          "required": true,
+          "description": "Observed in intercepted request body field \"items[].quantity\"."
+        },
+        "items[].price": {
+          "type": "number",
+          "required": true,
+          "description": "Observed in intercepted request body field \"items[].price\"."
+        },
+        "customerName": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"customerName\"."
+        },
+        "orderType": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"orderType\"."
+        },
+        "tableNumber": {
+          "type": "number",
+          "required": true,
+          "description": "Observed in intercepted request body field \"tableNumber\"."
+        },
+        "deliveryAddress": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"deliveryAddress\"."
+        }
+      },
+      "routing": [
+        {
+          "via": "http",
+          "target": "/api/order",
+          "method": "POST",
+          "operation": "place_order",
+          "executable": true,
+          "source": "runtime_binding"
+        },
+        {
+          "via": "openapi",
+          "target": "/api/order",
+          "method": "POST",
+          "operation": "place_order",
+          "executable": true,
+          "source": "openapi_operation"
+        },
+        {
+          "via": "mcp",
+          "target": "place_order",
+          "operation": "place_order",
+          "executable": true,
+          "source": "mcp_tool",
+          "reason": "Generated MCP tool proxies to the code-detected HTTP runtime binding."
+        },
+        {
+          "via": "a2a",
+          "target": "place_order",
+          "operation": "place_order",
+          "executable": true,
+          "source": "a2a_skill",
+          "reason": "A2A skill maps to the same reviewed action ID."
+        }
+      ]
+    },
+    {
+      "name": "send_message",
+      "description": "Customer can send a contact message with name, email, subject, and message content to the restaurant.",
+      "executable": true,
+      "method": "POST",
+      "endpoint": "/api/contact",
+      "inputs": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"name\"."
+        },
+        "email": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"email\"."
+        },
+        "subject": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"subject\"."
+        },
+        "message": {
+          "type": "string",
+          "required": true,
+          "description": "Observed in intercepted request body field \"message\"."
+        }
+      },
+      "routing": [
+        {
+          "via": "http",
+          "target": "/api/contact",
+          "method": "POST",
+          "operation": "send_message",
+          "executable": true,
+          "source": "runtime_binding"
+        },
+        {
+          "via": "openapi",
+          "target": "/api/contact",
+          "method": "POST",
+          "operation": "send_message",
+          "executable": true,
+          "source": "openapi_operation"
+        },
+        {
+          "via": "mcp",
+          "target": "send_message",
+          "operation": "send_message",
+          "executable": true,
+          "source": "mcp_tool",
+          "reason": "Generated MCP tool proxies to the code-detected HTTP runtime binding."
+        },
+        {
+          "via": "a2a",
+          "target": "send_message",
+          "operation": "send_message",
+          "executable": true,
+          "source": "a2a_skill",
+          "reason": "A2A skill maps to the same reviewed action ID."
+        }
+      ]
+    },
+    {
+      "name": "get_reservations",
+      "description": "Query existing reservations data from the system.",
+      "executable": true,
+      "method": "GET",
+      "endpoint": "/api/reservations",
+      "inputs": {},
+      "routing": [
+        {
+          "via": "http",
+          "target": "/api/reservations",
+          "method": "GET",
+          "operation": "get_reservations",
+          "executable": true,
+          "source": "runtime_binding"
+        },
+        {
+          "via": "openapi",
+          "target": "/api/reservations",
+          "method": "GET",
+          "operation": "get_reservations",
+          "executable": true,
+          "source": "openapi_operation"
+        },
+        {
+          "via": "mcp",
+          "target": "get_reservations",
+          "operation": "get_reservations",
+          "executable": true,
+          "source": "mcp_tool",
+          "reason": "Generated MCP tool proxies to the code-detected HTTP runtime binding."
+        },
+        {
+          "via": "a2a",
+          "target": "get_reservations",
+          "operation": "get_reservations",
+          "executable": true,
+          "source": "a2a_skill",
+          "reason": "A2A skill maps to the same reviewed action ID."
+        }
+      ]
+    }
+  ],
+  "framework": "@modelcontextprotocol/sdk streamable-http",
+  "deployTarget": "self_hosted"
+}

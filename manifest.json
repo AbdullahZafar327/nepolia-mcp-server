@@ -1,0 +1,18 @@
+{
+  "generated": true,
+  "business": "Napoli Pizzeria",
+  "spec_id": "pizza-test-app-jade.vercel.app",
+  "protocol": "mcp",
+  "action_ids": [
+    "book_reservation",
+    "place_order",
+    "send_message",
+    "get_reservations"
+  ],
+  "todo_count": 2,
+  "notes": [
+    "CUSTOMER_API_BASE_URL is optional; generated server falls back to the scanned website root URL.",
+    "TODO: supply customer auth credentials if protected actions are enabled.",
+    "TODO: review mutation/human-confirmation actions before production use."
+  ]
+}
